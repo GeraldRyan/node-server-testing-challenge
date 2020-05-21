@@ -52,7 +52,7 @@ server.post('/', (req, res) =>
 
 server.delete('/:id', (req, res) =>
 {
-  bandLib.deleteOne(id)
+  bandLib.deleteOne(req.params.id)
     .then(g =>
     {
       res.status(200).json("It's gone")

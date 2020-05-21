@@ -20,6 +20,7 @@ function addOne(obj){
   return db('bands').insert({name:obj.name, genre:obj.genre, ranking:obj.ranking})
 }
 
-function deleteOne(){
+function deleteOne(id){
 
+return db('bands').where('index','=',id).del()
 }
