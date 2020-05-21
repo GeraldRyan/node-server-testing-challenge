@@ -3,7 +3,9 @@ const db = require("../data/dbconfig")
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  addOne,
+  deleteOne
 }
 
 function getAll(){
@@ -12,4 +14,12 @@ function getAll(){
 
 function getOne(id){
   return db('bands').where('index','=', id)
+}
+
+function addOne(obj){
+  return db('bands').insert({name:obj.name, genre:obj.genre, ranking:obj.ranking})
+}
+
+function deleteOne(){
+
 }
